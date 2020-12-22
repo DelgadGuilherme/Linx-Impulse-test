@@ -4,6 +4,7 @@ body{
     grid-template-areas: "menu" "conteudo" "rodape";
     grid-template-rows: 30vh auto 30vh;
     color: #707070;
+    font-family: 'Open Sans', sans-serif;
 }
 /** ------------------------------------------------------------------------------------ Fim Body ------------------------------------------------------------------------------------ **/
 
@@ -41,6 +42,12 @@ header{
     height: 40px;
     align-content: center;
 }
+
+.link {
+    color: #707070;
+    text-decoration: none;
+}
+
 header h1{
     grid-area: h1;
 }
