@@ -44,7 +44,7 @@
                             </p>
                     </section>
                     <section id='formulario'>
-                        <form>
+                        <form enctype="multipart/form-data" action="{{url_for('participar')}}" method="POST" onsubmit="return submitForm(this);">
                             <label for="name">Nome: </label>
                             <input type="text" name="name" id="name" />
                             <label for="email">Email: </label>
@@ -55,7 +55,7 @@
                             <input type="radio" name="masc" id="masc"/>
                             <label for="fem">Feminino</label>
                             <input type="radio" name="fem" id="fem"/>
-                            <input  id="enviar" type="submit"/>
+                            <button id="enviar" type="submit">Enviar</button>
                         </form>
                     </section>
                 </section>
@@ -65,7 +65,7 @@
                 </section>
 
                 <section id="produtos">
-                    {% for produto in  lista_produtos %}
+                    {% for produto in lista_produtos %}
                     <section>
                         <div>
                             <img id='espaco-img' src='https:{{produto.get_image()}}'>
@@ -108,5 +108,20 @@
             </div>
         </footer>
 
+        <script>
+            function submitForm(formElement){
+              var formData = new FormData(formElement);
+              var xhr = new XMLHttpRequest();
+              xhr.open(formElement.method, formElement.action);
+              xhr.onreadystatechange = function() {
+                if(xhr.readyState == 4 && xhr.status == 201) {
+                  document.getElementById('formulario').innerHTML = xhr.response;
+                  };
+                };
+              xhr.send(formData);
+              return false;
+            }
+        </script>  
     </body>
 </html>
+

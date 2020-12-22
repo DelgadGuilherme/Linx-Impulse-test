@@ -15,4 +15,9 @@ def home():
     lista_produtos.append(Produto(product['id'], product['name'], product['image'],product['oldPrice'],product['price'],product['description'],product['installments']['count'],product['installments']['value']))
 
   return render_template('index.html',  lista_produtos= lista_produtos)
+
+
+@app.route('/home/participar', methods=['POST'])
+def participar():
+    return render_template('email.html', 201, {'content-type': "text/html"})
     
