@@ -61,122 +61,23 @@
                 </section>
 
                 <section id="selecao-titulo">
-                    <h2>Sua Seleção Especial</h2>
+                    <h2 id='selecao-titulo-titulo'>Sua Seleção Especial</h2>
                 </section>
 
                 <section id="produtos">
+                    {% for produto in  lista_produtos %}
                     <section>
                         <div>
-                            <p id='espaco-img'> Imagem produto</p>
+                            <img id='espaco-img' src='https:{{produto.get_image()}}'>
                         </div>
-                        <h3 id='nome-produto'>Nome do Produto</h3>
-                        <p id='descricao'> Descrição do produto um pouco maior, 
-                            com duas linhas ou três que explica 
-                            melhor do que se trata.
-                        </p>
-                        <p id='valor-original'>De: R$23,99</p>
-                        <h2 id='valor desconto'>Por: R$19,99</h2>
-                        <p id='valor-parcela'>ou 2x de R$9,99</p>
+                        <h3 id='nome-produto'>{{produto.get_nome()}}</h3>
+                        <p id='descricao'> {{produto.get_descricao()}}.</p>
+                        <p id='valor-original'>De: R${{produto.get_preco_antigo()}}</p>
+                        <h2 id='valor desconto'>Por: R${{produto.get_preco()}}</h2>
+                        <p id='valor-parcela'>ou {{produto.get_parcela()}}x de R${{produto.get_valor_parcela()}}</p>
                         <button>Comprar</button>
                     </section>
-                    <section>
-                        <div>
-                            <p id='espaco-img'> Imagem produto</p>
-                        </div>
-                        <h3 id='nome-produto'>Nome do Produto</h3>
-                        <p id='descricao'> Descrição do produto um pouco maior, 
-                            com duas linhas ou três que explica 
-                            melhor do que se trata.
-                        </p>
-                        <p id='valor-original'>De: R$23,99</p>
-                        <h2 id='valor desconto'>Por: R$19,99</h2>
-                        <p id='valor-parcela'>ou 2x de R$9,99</p>
-                        <button>Comprar</button>
-                    </section>
-                    <section>
-                        <div>
-                            <p id='espaco-img'> Imagem produto</p>
-                        </div>
-                        <h3 id='nome-produto'>Nome do Produto</h3>
-                        <p id='descricao'> Descrição do produto um pouco maior, 
-                            com duas linhas ou três que explica 
-                            melhor do que se trata.
-                        </p>
-                        <p id='valor-original'>De: R$23,99</p>
-                        <h2 id='valor desconto'>Por: R$19,99</h2>
-                        <p id='valor-parcela'>ou 2x de R$9,99</p>
-                        <button>Comprar</button>
-                    </section>
-                    <section>
-                        <div>
-                            <p id='espaco-img'> Imagem produto</p>
-                        </div>
-                        <h3 id='nome-produto'>Nome do Produto</h3>
-                        <p id='descricao'> Descrição do produto um pouco maior, 
-                            com duas linhas ou três que explica 
-                            melhor do que se trata.
-                        </p>
-                        <p id='valor-original'>De: R$23,99</p>
-                        <h2 id='valor desconto'>Por: R$19,99</h2>
-                        <p id='valor-parcela'>ou 2x de R$9,99</p>
-                        <button>Comprar</button>
-                    </section>
-                    <section>
-                        <div>
-                            <p id='espaco-img'> Imagem produto</p>
-                        </div>
-                        <h3 id='nome-produto'>Nome do Produto</h3>
-                        <p id='descricao'> Descrição do produto um pouco maior, 
-                            com duas linhas ou três que explica 
-                            melhor do que se trata.
-                        </p>
-                        <p id='valor-original'>De: R$23,99</p>
-                        <h2 id='valor desconto'>Por: R$19,99</h2>
-                        <p id='valor-parcela'>ou 2x de R$9,99</p>
-                        <button>Comprar</button>
-                    </section>
-                    <section>
-                        <div>
-                            <p id='espaco-img'> Imagem produto</p>
-                        </div>
-                        <h3 id='nome-produto'>Nome do Produto</h3>
-                        <p id='descricao'> Descrição do produto um pouco maior, 
-                            com duas linhas ou três que explica 
-                            melhor do que se trata.
-                        </p>
-                        <p id='valor-original'>De: R$23,99</p>
-                        <h2 id='valor desconto'>Por: R$19,99</h2>
-                        <p id='valor-parcela'>ou 2x de R$9,99</p>
-                        <button>Comprar</button>
-                    </section>
-                    <section>
-                        <div>
-                            <p id='espaco-img'> Imagem produto</p>
-                        </div>
-                        <h3 id='nome-produto'>Nome do Produto</h3>
-                        <p id='descricao'> Descrição do produto um pouco maior, 
-                            com duas linhas ou três que explica 
-                            melhor do que se trata.
-                        </p>
-                        <p id='valor-original'>De: R$23,99</p>
-                        <h2 id='valor desconto'>Por: R$19,99</h2>
-                        <p id='valor-parcela'>ou 2x de R$9,99</p>
-                        <button>Comprar</button>
-                    </section>
-                    <section>
-                        <div>
-                            <p id='espaco-img'> Imagem produto</p>
-                        </div>
-                        <h3 id='nome-produto'>Nome do Produto</h3>
-                        <p id='descricao'> Descrição do produto um pouco maior, 
-                            com duas linhas ou três que explica 
-                            melhor do que se trata.
-                        </p>
-                        <p id='valor-original'>De: R$23,99</p>
-                        <h2 id='valor desconto'>Por: R$19,99</h2>
-                        <p id='valor-parcela'>ou 2x de R$9,99</p>
-                        <button>Comprar</button>
-                    </section>
+                    {% endfor %}
                 </section>
 
                 <section id='mais-produtos'>

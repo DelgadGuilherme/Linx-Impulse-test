@@ -93,6 +93,7 @@ header p{
 }
 
 
+
 #enviar{
     background: #FFFFFF ;
     border: 1px solid #707070;
@@ -108,7 +109,6 @@ header p{
     justify-items: center;
     width: 100%;
     line-height: 0.1em;
-    border-bottom: 1px solid #707070;
     margin: 10px 0 50px;
 }
 
