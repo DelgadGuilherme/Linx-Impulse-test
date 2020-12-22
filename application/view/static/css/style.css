@@ -112,11 +112,12 @@ header p{
 
 #produtos{
     grid-area: produtos;
-    display: grid;
-    grid-template-columns: repeat(4, 10vw);
-    grid-row-gap: 20px;
-    grid-column-gap: 20px;
-    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    grid-row-gap: 30px;
+    grid-column-gap: 30px;
+    align-content: center;
 }
 
 #produtos div{
@@ -156,6 +157,7 @@ header p{
     display: grid;
     grid-template-areas: 'espaco-img' 'nome-produto' 'descricao-produto' 'valor-original' 'valor-desconto' 'valor-parcela' 'comprar';
     grid-template-rows: 15vh 4vh 9vh 2vh 4vh 4vh 3vh;
+    grid-template-columns: 10vw;
 }
 
 #mais-produtos{
@@ -245,3 +247,57 @@ footer div{
 /** ------------------------------------------------------------------------------------ Fim Rodape ------------------------------------------------------------------------------------ **/
 
 
+
+@media screen and (max-width: 1300px) {
+
+    body{
+        display: grid;
+        grid-template-areas: "menu" "conteudo" "rodape";
+        grid-template-columns: auto;
+        grid-template-rows:  auto;
+    }
+
+    #ajude_algoritimo{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        grid-template-areas: 'texto' 'formulario';
+    }
+
+    #conteudo{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        grid-template-areas: 'ajude_agoritimo' 'selecao-titulo' 'produtos' 'mais-produtos' 'compartilhar-titulo' 'novidade';
+    }
+    
+    #produtos section{
+        display: flex;
+        grid-template-areas: 'espaco-img' 'nome-produto' 'descricao-produto' 'valor-original' 'valor-desconto' 'valor-parcela' 'comprar';
+        grid-template-rows: auto;
+        grid-template-columns: auto;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    header{
+        display: flex;
+        grid-template-rows: auto;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    #novidade{
+        display: flex;
+        grid-template-rows: auto;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    footer{
+        display: flex;
+        grid-template-rows: auto;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+}
